@@ -29,6 +29,10 @@ const StyledCardH2 = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  h2 {
+    font-weight: bold;
+  }
 `;
 
 const StyleCardH3 = styled.div`
