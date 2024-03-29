@@ -12,7 +12,7 @@ const StyledCard = styled.article`
   margin: 1rem;
 
   img {
-    width: 20%;
+    width: 30%;
     height: auto;
   }
 `;
