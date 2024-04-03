@@ -20,28 +20,41 @@ const Image = styled.img`
   padding: 1rem 0.5rem; /* Diminui o padding */
   object-fit: cover;
   cursor: pointer;
-  left: 50%; /* Centraliza horizontalmente */
 `;
+
+const ButtonLogo = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: #f5f5f5;
+  color: #757575;
+  width: 10%;
+  height: 100%;
+`;
+
+const Form = styled.form``;
 
 const Input = styled.div`
   position: relative;
   width: 200px;
+  height: 2.3rem;
   display: flex;
-  border-radius: 0;
+  border-radius: 5rem;
+  box-shadow: 0px 2px 5px #757575;
 
   button {
     cursor: pointer;
     border: none;
     background-color: #f5f5f5;
     color: #757575;
-    padding: 0.5rem;
+    padding-right: 0.7rem;
     font-size: 1rem;
+    border-radius: 0 1rem 1rem 0;
   }
 
   input {
     outline: none;
     font-size: 1rem;
-    padding: 0.6rem;
+    padding: 1rem;
     background-color: #f5f5f5;
     border: none;
     width: 100%;
@@ -52,11 +65,11 @@ const Input = styled.div`
   }
 
   i {
-    top: 1;
+    top: 2px;
     right: 0.2rem;
     z-index: 10;
     border: none;
-    border-radius: 0rem;
+    border-radius: 3rem;
     background-color: #f5f5f5;
     color: #757575;
     padding: 0.5rem;
@@ -64,4 +77,4 @@ const Input = styled.div`
   }
 `;
 
-export { Nav, Image, Input };
+export { Nav, Image, Input, ButtonLogo, Form };

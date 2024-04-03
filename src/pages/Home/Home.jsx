@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar/Navbar";
 import Card from "../../components/Card/Card";
 import { StyledHome } from "./StyledHome";
 import { getNews } from "../../Services/NewsService";
@@ -29,9 +28,10 @@ function Home() {
     .map((_, index) => index * chunkSize)
     .map((begin) => otherNews.slice(begin, begin + chunkSize));
 
+  console.log(news);
+
   return (
     <div>
-      <Navbar />
       <StyledHome>
         <div className="container text-center">
           <div className="row">
