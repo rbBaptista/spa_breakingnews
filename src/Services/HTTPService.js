@@ -9,4 +9,4 @@ const HTTPService = axios.create({
   },
 });
 
-export default HTTPService;
+export { HTTPService, baseURL };
