@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "../Input/Input";
+import { signIn } from "../../Services/UserService";
 
 const schema = z.object({
   email: z.string().email().toLowerCase(),
@@ -17,9 +18,11 @@ function SignIn() {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    const response = await signIn(data);
     console.log("Sign In");
-    console.log(data);
+    console.log(response.data.token);
+    return response;
   };
 
   return (

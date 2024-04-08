@@ -6,4 +6,8 @@ function createUser(user) {
   return axios.post(`${baseURL}/user`, user);
 }
 
-export { createUser };
+function signIn(user) {
+  return axios.post(`${baseURL}/auth/login`, user);
+}
+
+export { createUser, signIn };

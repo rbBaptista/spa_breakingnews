@@ -3,6 +3,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "../Input/Input";
 import { createUser } from "../../Services/UserService";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -20,11 +22,15 @@ function SignUp() {
     resolver: zodResolver(schema),
   });
 
+  const navigate = useNavigate();
+
   const onSubmit = async (data) => {
     try {
-      await createUser(data);
-      console.log("Sign Up");
-      console.log(data);
+      const response = await createUser(data);
+      Cookies.set("token", response.data.token, { expires: 7 }); // Changed this line
+      console.log(response.data);
+      console.log(Cookies.get("token"));
+      navigate("/");
     } catch (error) {
       console.error("Error:", error);
     }

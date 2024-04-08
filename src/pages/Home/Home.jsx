@@ -28,8 +28,6 @@ function Home() {
     .map((_, index) => index * chunkSize)
     .map((begin) => otherNews.slice(begin, begin + chunkSize));
 
-  console.log(news);
-
   return (
     <div>
       <StyledHome>
