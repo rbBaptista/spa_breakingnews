@@ -12,7 +12,7 @@ function ErrorPage() {
       </p>
       <p>Please check the URL for mistakes or use the navigation menu to access other sections of the site.</p>
       <p>
-        <a href="/">Click here to go back to homepage</a>
+        <a href="/">Click here to go back to the homepage</a>
       </p>
     </div>
   );
