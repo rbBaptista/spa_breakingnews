@@ -77,4 +77,12 @@ const Input = styled.div`
   }
 `;
 
-export { Nav, Image, Input, ButtonLogo, Form };
+const Perfil = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem; // Adiciona espaçamento entre os elementos
+  margin-right: 1rem;
+`;
+
+export { Nav, Image, Input, ButtonLogo, Form, Perfil };

@@ -3,6 +3,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "../Input/Input";
 import { signIn } from "../../Services/UserService";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
   email: z.string().email().toLowerCase(),
@@ -10,6 +12,7 @@ const schema = z.object({
 });
 
 function SignIn() {
+  const navigate = useNavigate();
   const {
     register: registerSignIn,
     handleSubmit,
@@ -20,6 +23,8 @@ function SignIn() {
 
   const onSubmit = async (data) => {
     const response = await signIn(data);
+    navigate(`/`);
+    Cookies.set("token", response.data.token, { expires: 7 }); // Changed this line
     console.log("Sign In");
     console.log(response.data.token);
     return response;

@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const baseURL = "http://localhost:3001";
 
@@ -10,4 +11,12 @@ function signIn(user) {
   return axios.post(`${baseURL}/auth/login`, user);
 }
 
-export { createUser, signIn };
+function getByUserId() {
+  return axios.get(`${baseURL}/user`, {
+    headers: {
+      Authorization: `bearer ${Cookies.get("token")}`,
+    },
+  });
+}
+
+export { createUser, signIn, getByUserId };
