@@ -1,7 +1,16 @@
+import { Input } from "../Input/Input.jsx";
 import PropTypes from "prop-types";
-import { StyledCard, StyledCardH1, StyledCardH2, StyleCardH3, StyledLike, StyledComment } from "./StyledCard";
+import {
+  StyledCard,
+  StyledCardH1,
+  StyledCardH2,
+  StyleCardH3,
+  StyledLike,
+  StyledComment,
+  StyledEdit,
+} from "./StyledCard";
 
-function Card({ title, text, image, likes, comments }) {
+function Card({ title, text, image, likes, comments, edit, deleteNews }) {
   return (
     <StyledCard>
       <StyledCardH1>
@@ -20,6 +29,16 @@ function Card({ title, text, image, likes, comments }) {
           <i className="bi bi-chat-text"></i>
           <span>{comments}</span>
         </StyledComment>
+        {edit && (
+          <StyledEdit>
+            <i className="bi bi-pencil"></i>
+          </StyledEdit>
+        )}
+        {deleteNews && (
+          <button onClick={deleteNews}>
+            <i className="bi bi-trash"></i>
+          </button>
+        )}
       </StyleCardH3>
     </StyledCard>
   );
@@ -31,6 +50,7 @@ Card.propTypes = {
   image: PropTypes.string.isRequired,
   likes: PropTypes.number.isRequired,
   comments: PropTypes.number.isRequired,
+  edit: PropTypes.bool,
 };
 
 export default Card;

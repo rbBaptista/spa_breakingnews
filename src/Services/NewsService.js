@@ -18,3 +18,19 @@ export function getNewsByUserId() {
     },
   });
 }
+
+export function createNews(data) {
+  return axios.post(`${baseURL}/news`, data, {
+    headers: {
+      Authorization: `bearer ${Cookies.get("token")}`,
+    },
+  });
+}
+
+export function deleteNews(id) {
+  return axios.delete(`${baseURL}/news/${id}`, {
+    headers: {
+      Authorization: `bearer ${Cookies.get("token")}`,
+    },
+  });
+}

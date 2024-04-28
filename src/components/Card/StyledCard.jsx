@@ -58,4 +58,12 @@ const StyledComment = styled.div`
   gap: 0.3rem;
 `;
 
-export { StyledCard, StyledCardH1, StyledCardH2, StyleCardH3, StyledLike, StyledComment };
+const StyledEdit = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+`;
+
+export { StyledCard, StyledCardH1, StyledCardH2, StyleCardH3, StyledLike, StyledComment, StyledEdit };
